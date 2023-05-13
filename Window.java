@@ -132,7 +132,7 @@ public class Window extends Application implements EventHandler<MouseEvent> {
 
 
                 Remember:\s
-                 - you only have 9 available actions, then the game will end\s
+                 - you only have 8 available actions, then the game will end\s
                  - you also can not ask about the same suspect 2 times in a row
                 """);
         intro.setStyle("-fx-text-fill: FIREBRICK;");
@@ -372,13 +372,13 @@ public class Window extends Application implements EventHandler<MouseEvent> {
         int selectedSuspectIndex = getIndex();
         Label selectedSuspectLabel = findSuspectLabel(pane, selectedSuspectIndex);
 
-        if (numberOfActions == 9) {
+        if (numberOfActions == 8) {
             showPage(page6);
 
         }
 
         if (lastSuspect!=selectedSuspectIndex) {
-            if (numberOfActions <= 8) {
+            if (numberOfActions <= 7) {
                 if (buttonIclicked) {
                     if (selectedSuspectLabel != null) {
                         selectedSuspectLabel.setText(selectedSuspectLabel.getText() + "\n" + catchTheKiller.investigator.conductTheInterrogation(catchTheKiller.suspects.get(selectedSuspectIndex)));
